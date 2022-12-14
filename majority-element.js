@@ -10,8 +10,8 @@
 // Input: nums = [2,2,1,1,1,2,2]
 // Output: 2
 
-const majority = arr => {
-    const obj = arr.reduce((acc, cur) => {
+var majorityElement = function(nums) {
+    const obj = nums.reduce((acc, cur) => {
         if (cur in acc) {
             acc[cur]++;
         } else {
@@ -19,6 +19,5 @@ const majority = arr => {
         }
         return acc;
     }, {})
-    let x = Object.keys(obj).reduce((acc, cur) => obj[acc] > obj[cur] ? acc : cur);
-    return x;
-}
+    return Object.keys(obj).reduce((acc, cur) => obj[acc] > obj[cur] ? acc : cur);
+};
